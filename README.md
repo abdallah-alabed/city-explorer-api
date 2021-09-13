@@ -26,8 +26,8 @@ Name of feature: Creating our owwn API
 
 Estimate of time needed to complete: 3 Hours
 
-Start time: _____
+Start time: 5 pm
 
-Finish time: _____
+Finish time: 1 am
 
-Actual time needed to complete: _____
+Actual time needed to complete: 7 hours
