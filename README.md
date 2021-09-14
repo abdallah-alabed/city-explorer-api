@@ -1,6 +1,6 @@
 # city-explorer-api
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: abdallah-alabed
+**Version**: 2.0
 
 ## Overview
 this app will work with the previous city-explorer and will transfer data and create API for it.
@@ -21,13 +21,14 @@ express, nodejs and javascript
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+CrabDude (https://github.com/CrabDude/trycatch)
 
-Name of feature: Creating our owwn API
+Name of feature: impleminting weather and movie api
 
-Estimate of time needed to complete: 3 Hours
+Estimate of time needed to complete: -
 
-Start time: 5 pm
+Start time: 7 pm
 
 Finish time: 1 am
 
-Actual time needed to complete: 7 hours
+Actual time needed to complete: 6 hours
