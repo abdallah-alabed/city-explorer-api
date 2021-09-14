@@ -10,61 +10,47 @@ require('dotenv').config();
 
 const PORT= process.env.PORT;
 const weatherData=require('./data/weather.json')
-
-// app.get('/',(req,res)=>{
-//         res.status(200).send('hello')
-//     });
-//  app.get('/data',(req,res)=>{
-    
-//         let city=weatherData.map(day=>{
-//             return {
-//                 city_name:day.city_name,
-//                 lat:day.lat,
-//                 lon:day.lon,
-//                 date:day.data.valid_date,
-//                 description:day.data.weather.description
-//             }
-//         })
-
-//         let customRespone={
-//             forecast:forecastDays,
-//             city_name:city.city_name   
-//         }
-//         res.status(200).json(customRespone);
-//     });
-
-    let result=[];
-    let ForecastObj=[];
-
-    app.get('/weather',(req,res)=>{
-        let lat=Number(req.query.lat);
-        let lon=Number(req.query.lon);
-        let searchQuery=req.query.searchQuery;
+// const axios = require('axios');
 
 
-        if (lat && lon && searchQuery){
-            weatherData.find(item=>{
-            if(item.city_name===searchQuery){
-                result.push(item)} 
+
+app.get('/weather', (req, res) => {
+    let searchQuery = req.query.searchQuery;
+    let lat = req.query.lat;
+    let lon = req.query.lon;
+
+    let allData = weatherData.find(item => {
+        if (searchQuery == item.city_name.toLowerCase() && lat == item.lat && lon == item.lon) {
+            return item;
+        }
+    })
+    try {
+        let forecastObj = [];
+        let date;
+        let description;
         
-            }),
-               
-                ForecastObj=(weatherData).map(elem=>{  return (new Forecast( elem.data.map(e=>e.valid_date),elem.data.map(e=>e.weather.description)) )     })
-                console.log(ForecastObj)
-                res.status(200).json(ForecastObj)}
-        else{
-                        res.status(500).send('error');
-            }})
-    
-    
 
+       allData.data.map(e=>{
+        date = e.valid_date;
+        description=  e.weather.description;
+        forecastObj.push(new Forecast(date, description));       
+     }
+) 
+        res.status(200).send(forecastObj);
+    } catch {
+        res.status(500).send('data not found');
+    }
+})
 
 app.listen(PORT, ()=>{
     console.log(`Listening on port ${PORT}` )
 });
 
-class Forecast{
-    constructor(valid_date, description){
-        this.valid_date=valid_date
-        this.description=description
-    }}
+class Forecast {
+    constructor(date, description) {
+        this.date = date;
+        this.description = description;
+    }
+}
+
+   
