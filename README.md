@@ -2,12 +2,12 @@
 
 **Author**: Abdallah Alabed
 
-**Version**: 4.0.0
+**Version**: 5.0.0
  Sunday 12-9: created the front end interface and created a locaion IQ api interface dependent on the city search from the user.
  monday 13-9: created the back end for my front end and added the weather feature from weatherbit API
  Tuesday 14-9: Added the movies feature from moviesDB API .
  Wednesday 15-9: Refactored my code to modules and controllers and created sub commponents for the weather and the movie features!.
- 
+ Thursday 16-9: Use Cache to make the loading speed more effecient.
 
 ## Overview
 we are creating a cities exploring website where you enter the name of the city and we display the latitude and longitude and show you the map along with the upcoming weather for the next 16 days! and show any movies that is related to the city itself.
@@ -29,7 +29,7 @@ we are using JS,ReactJS & bootstrap
 13-9-2021 2am  - location works fine with error detection but the weather feature still have problems!
 14-9-2021 1am  - Weather works just fine and movies as well on local device only!
 15-9-2021 10pm - Everything works fine even online after i linked heroku to netlify
-
+16-9-2021 5pm  - Everything works fine after refactoring and inserting cache.
 
 
 ## Credit and Collaborations
@@ -87,5 +87,13 @@ Actual time needed to complete: 45 minutes
 
 /////////////////////////////////////////
 
+Name of feature: adding cache
 
+Estimate of time needed to complete: -
+
+Start time: 2:30 pm
+
+Finish time: 3:30 pm
+
+Actual time needed to complete: 1 hour
 
