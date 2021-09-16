@@ -2,7 +2,6 @@
 const Movie=require('../models/movies.model')
 const axios = require('axios');
 
-
 const movieController=(req, res)=> {
 
     let searchQuery3 = req.query.query
