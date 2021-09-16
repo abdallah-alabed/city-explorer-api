@@ -1,26 +1,24 @@
-'use strict'
+"use strict";
 
-const express=require('express');
-const app=express();
+const express = require("express");
+const app = express();
 
-const cors=require('cors');
+const cors = require("cors");
 app.use(cors());
 
-require('dotenv').config();
+require("dotenv").config();
 
-const PORT= process.env.PORT;
+const PORT = process.env.PORT;
 // const axios = require('axios');
-const weatherController=require("./controllers/weather.controller");
-const movieController=require("./controllers/movie.controller");
+const weatherController = require("./controllers/weather.controller");
+const movieController = require("./controllers/movie.controller");
 
+app.get("/weather", weatherController);
+app.get("/movie", movieController);
 
-app.get('/weather',weatherController)
-app.get('/movie', movieController)
-
-app.listen(PORT,()=>{
-    console.log(`Listening on port ${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
-
 
 ////// FOR LAB 7 ////////////
 
@@ -38,14 +36,13 @@ app.listen(PORT,()=>{
 //         let forecastObj = [];
 //         let date;
 //         let description;
-        
 
 //        allData.data.map(e=>{
 //         date = e.valid_date;
 //         description=  e.weather.description;
-//         forecastObj.push(new Forecast(date, description));       
+//         forecastObj.push(new Forecast(date, description));
 //      }
-// ) 
+// )
 //         res.status(200).send(forecastObj);
 //     } catch {
 //         res.status(500).send('data not found');
@@ -62,7 +59,3 @@ app.listen(PORT,()=>{
 //         this.description = description;
 //     }
 // }
-
-
-
-
